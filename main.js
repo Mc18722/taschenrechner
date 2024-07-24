@@ -32,7 +32,7 @@ const buttonHandler = (event) => {
       secondOp = secondOp + txt;
     }
   } else {
-    if ("+-/X".includes(txt)) {
+    if ("+-/X%".includes(txt)) {
       calculate();
       operator = txt;
     }
@@ -83,6 +83,9 @@ const calculate = () => {
       } else {
         firstOp = (firstValue / secondValue).toString();
       }
+    }
+    if (operator === "%") {
+      firstOp = (firstValue * secondValue / 100).toString();
     }
     operator = "";
     secondOp = "";
